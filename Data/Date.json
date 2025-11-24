@@ -1,0 +1,42 @@
+I'd be happy to help you with that.
+
+Here is a sample JSON object representing the email body:
+```json
+{
+  "orders": [
+    {
+      "absender": "ahmad.mueller@beispiel-firma.de",
+      "empfaenger": "logistik@spedition-muster.de",
+      "betriff": "Transporte – dringend – mehrere Lieferungen",
+      "body": "In Dortmund steht seit Montag ein Palettenwagen mit grünen Kisten – sind für die neue Linie –, die müssen nach Leipzig, aber nicht ins alte Werk, sondern ins neue Gebäude C. Abholen kann man die, wenn der Sicherheitsdienst Bescheid weiß – also am besten vorher anrufen."
+    },
+    {
+      "absender": "ahmad.mueller@beispiel-firma.de",
+      "empfaenger": "logistik@spedition-muster.de",
+      "betriff": "Transporte – dringend – mehrere Lieferungen",
+      "body": "In Frankfurt ist ein Container (20 Fuß) mit Restposten, der muss nach Hamburg, aber erst, wenn der Hafenstreik vorbei ist. Wann das ist, weiß keiner. Könnt ihr trotzdem kommen?"
+    },
+    {
+      "absender": "ahmad.mueller@beispiel-firma.de",
+      "empfaenger": "logistik@spedition-muster.de",
+      "betriff": "Transporte – dringend – mehrere Lieferungen",
+      "body": "In Stuttgart sind 3 Rollcontainer mit Werkzeug, die sollen nach Berlin, aber nur, wenn Ihr eh Richtung Osten fahrt."
+    },
+    {
+      "absender": "ahmad.mueller@beispiel-firma.de",
+      "empfaenger": "logistik@spedition-muster.de",
+      "betriff": "Transporte – dringend – mehrere Lieferungen",
+      "body": "In Hamburg ist was für Köln – Kartons, ca. 12 –, aber die dürfen nicht nass werden, also nur bei trockenem Wetter."
+    },
+    {
+      "absender": "ahmad.mueller@beispiel-firma.de",
+      "empfaenger": "logistik@spedition-muster.de",
+      "betriff": "Transporte – dringend – mehrere Lieferungen",
+      "body": "In München steht noch ein Gitterbox rum – der muss nach Duisburg, aber erst nächste Woche, weil diese Woche Feiertag ist (oder war?)."
+    }
+  ]
+}
+```
+Note that I've wrapped each order in a separate JSON object, with the desired structure: `absender`, `empfaenger`, `betriff`, and `body`. The orders are stored in an array called "orders".
+
+Please let me know if this meets your requirements!
