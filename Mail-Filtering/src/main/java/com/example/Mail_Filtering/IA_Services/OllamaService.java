@@ -3,7 +3,8 @@ package com.example.Mail_Filtering.IA_Services;
 import com.example.Mail_Filtering.IA_Services.Http_AI.AiRequest;
 import com.example.Mail_Filtering.IA_Services.Http_AI.AiResponse;
 import com.example.Mail_Filtering.Models.EmailContainerModel;
-import com.example.Mail_Filtering.Models.EmailModel;
+import com.example.Mail_Filtering.Models.EmailInputModel;
+import com.example.Mail_Filtering.Models.EmailOutputModel;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,8 @@ public class OllamaService {
     private final RestTemplate restTemplate;
     @Autowired
     private EmailContainerModel emailContainerModel;
+    @Autowired
+    private EmailInputModel emailInputModel;
 
 
 
@@ -29,20 +32,39 @@ public class OllamaService {
     }
 
 
-    public void mailSplitAiResponse(EmailModel emailModel) {
+    public void mailSplitAiResponse(EmailInputModel emailInputModel) {
         AiRequest aiRequest = new AiRequest();
         aiRequest.setModel("gpt-4o");
-        aiRequest.setPrompt("you will recive a Json Objct, which contains E-mail information " +
-                "sender, reciver , subjct and body" +
-                "i want you to read the body of the E-mail, it is going to contain a Transport " +
-                "order Information for a logistics company, and if you noticed" +
-                "that the E-mail body contains more then one order, i want you to create a Json " +
-                "Object, which contains a sub-Json object for evrey single order in the E-mail body,"+
-                "the sub-Json objects have to have the following structure"+
-                "absender:"+ emailModel.getAbsender()+
-                "empfaenger: "+emailModel.getEmpfaenger()+
-                "betriff: "+ emailModel.getBetriff()+
-                "body: the text of the individual order from the original E-mail" + emailModel.getBody()+" .but very important! give me the data as clean json code!!!");
+        aiRequest.setPrompt("AUFGABE:\n" +
+                            "Du erhältst ein JSON-Objekt „email“. Analysiere ausschließlich das Feld \"body\".\n" +
+                            "Im Body stehen Transportaufträge in natürlicher Sprache.\n" +
+                            "\n" +
+                            "Für jeden Auftrag erstelle ein JSON-Objekt nach folgendem Schema, und für den " +
+                                    "absender,empfenger und betriff über nimmst du die Werte aus dem " +
+                                    "orginallen text:"+
+                            "absender:"+ emailInputModel.getAbsender()+
+                            "empfaenger: "+emailInputModel.getEmpfaenger()+
+                            "betriff: "+ emailInputModel.getBetriff()+
+                            "body: {" +
+                                "Abholort: " +
+                                "Abholzeit: " +
+                                "Zustellort: "+
+                                "Zustellzeit:"+
+                                    "}"+
+                                "Gib das Ergebnis NUR als folgendes JSON zurück:\n" +
+                                "\n" +
+                                "{\n" +
+                                "  \"orders\": [ ... ]\n" +
+                                "}\n" +
+                                "\n" +
+                                "Falls Informationen im Text fehlen, lasse die Felder leer, aber behalte die Struktur bei.\n" +
+                                "\n" +
+                                "KEIN zusätzlicher Text.\n" +
+                                "KEINE Kommentare.\n" +
+                                "KEINE Erklärungen."+
+                                "Hier ist die Email:\n" +
+                                "\n" +
+                                "{{"+emailInputModel.getBody() +"}}");
         aiRequest.setStream(false);
         AiResponse aiResponse = restTemplate.postForObject(OLLAMA_URL, aiRequest,AiResponse.class);
         System.out.println(aiResponse.getResponse());

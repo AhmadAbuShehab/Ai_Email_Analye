@@ -1,42 +1,48 @@
-I'd be happy to help you with that.
-
-Here is a sample JSON object representing the email body:
-```json
 {
   "orders": [
     {
-      "absender": "ahmad.mueller@beispiel-firma.de",
-      "empfaenger": "logistik@spedition-muster.de",
-      "betriff": "Transporte – dringend – mehrere Lieferungen",
-      "body": "In Dortmund steht seit Montag ein Palettenwagen mit grünen Kisten – sind für die neue Linie –, die müssen nach Leipzig, aber nicht ins alte Werk, sondern ins neue Gebäude C. Abholen kann man die, wenn der Sicherheitsdienst Bescheid weiß – also am besten vorher anrufen."
+      "absender": "logistik@transportservice.de",
+      "empfaenger": "dispatcher@meinunternehmen.de",
+      "betriff": "Fahraufträge für den 26.11.2025 – mehrere Touren",
+      "body": {
+        "Abholort": "Berlin, Alexanderplatz 1, 10178",
+        "Abholzeit": "07:00 Uhr",
+        "Zustellort": "Hamburg, Elbchaussee 45, 22765",
+        "Zustellzeit": "bis 12:00 Uhr"
+      }
     },
     {
-      "absender": "ahmad.mueller@beispiel-firma.de",
-      "empfaenger": "logistik@spedition-muster.de",
-      "betriff": "Transporte – dringend – mehrere Lieferungen",
-      "body": "In Frankfurt ist ein Container (20 Fuß) mit Restposten, der muss nach Hamburg, aber erst, wenn der Hafenstreik vorbei ist. Wann das ist, weiß keiner. Könnt ihr trotzdem kommen?"
+      "absender": "logistik@transportservice.de",
+      "empfaenger": "dispatcher@meinunternehmen.de",
+      "betriff": "Fahraufträge für den 26.11.2025 – mehrere Touren",
+      "body": {
+        "Abholort": "München, Marienplatz 8, 80331",
+        "Abholzeit": "09:30 Uhr",
+        "Zustellort": "Stuttgart, Königstraße 28, 70173",
+        "Zustellzeit": "bis 13:00 Uhr"
+      }
     },
     {
-      "absender": "ahmad.mueller@beispiel-firma.de",
-      "empfaenger": "logistik@spedition-muster.de",
-      "betriff": "Transporte – dringend – mehrere Lieferungen",
-      "body": "In Stuttgart sind 3 Rollcontainer mit Werkzeug, die sollen nach Berlin, aber nur, wenn Ihr eh Richtung Osten fahrt."
+      "absender": "logistik@transportservice.de",
+      "empfaenger": "dispatcher@meinunternehmen.de",
+      "betriff": "Fahraufträge für den 26.11.2025 – mehrere Touren",
+      "body": {
+        "Abholort": "Köln, Domkloster 4, 50667",
+        "Abholzeit": "10:15 Uhr",
+        "Zustellort": "Frankfurt am Main, Goethestraße 12, 60313",
+        "Zustellzeit": "bis 14:30 Uhr"
+      }
     },
     {
-      "absender": "ahmad.mueller@beispiel-firma.de",
-      "empfaenger": "logistik@spedition-muster.de",
-      "betriff": "Transporte – dringend – mehrere Lieferungen",
-      "body": "In Hamburg ist was für Köln – Kartons, ca. 12 –, aber die dürfen nicht nass werden, also nur bei trockenem Wetter."
-    },
-    {
-      "absender": "ahmad.mueller@beispiel-firma.de",
-      "empfaenger": "logistik@spedition-muster.de",
-      "betriff": "Transporte – dringend – mehrere Lieferungen",
-      "body": "In München steht noch ein Gitterbox rum – der muss nach Duisburg, aber erst nächste Woche, weil diese Woche Feiertag ist (oder war?)."
+      "absender": "logistik@transportservice.de",
+      "empfaenger": "dispatcher@meinunternehmen.de",
+      "betriff": "Fahraufträge für den 26.11.2025 – mehrere Touren",
+      "body": {
+        "Abholort": "Dresden, Prager Straße 5, 01069",
+        "Abholzeit": "08:45 Uhr",
+        "Zustellort": "Leipzig, Augustusplatz 10, 04109",
+        "Zustellzeit": "bis 11:15 Uhr"
+      }
     }
   ]
 }
-```
-Note that I've wrapped each order in a separate JSON object, with the desired structure: `absender`, `empfaenger`, `betriff`, and `body`. The orders are stored in an array called "orders".
-
-Please let me know if this meets your requirements!
