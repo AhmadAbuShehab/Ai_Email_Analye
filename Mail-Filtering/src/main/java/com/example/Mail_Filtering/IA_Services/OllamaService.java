@@ -20,8 +20,7 @@ public class OllamaService {
     private final RestTemplate restTemplate;
     @Autowired
     private EmailContainerModel emailContainerModel;
-    @Autowired
-    private EmailInputModel emailInputModel;
+
 
 
 
