@@ -3,9 +3,9 @@ package com.example.Mail_Filtering.IA_Services.Http_AI;
 public class AiRequest {
     private String model;
     private String prompt;
-    private boolean stream = false;
+    private boolean stream;
 
-    public AiRequest() {
+    public AiRequest(String model, String prompt, boolean stream) {
         this.model = model;
         this.prompt = prompt;
         this.stream = stream;
@@ -16,7 +16,7 @@ public class AiRequest {
     }
 
     public void setModel(String model) {
-        this.model = "llama3";
+        this.model = model;
     }
 
     public String getPrompt() {
@@ -32,7 +32,7 @@ public class AiRequest {
     }
 
     public void setStream(boolean stream) {
-        this.stream = stream;
+        this.stream = false;
     }
 
 
