@@ -1,0 +1,48 @@
+{
+  "orders": [
+    {
+      "absender": "logistik@transportservice.de",
+      "empfaenger": "dispatcher@meinunternehmen.de",
+      "betriff": "Fahraufträge für den 26.11.2025 – mehrere Touren",
+      "body": {
+        "abholort": "Berlin, Alexanderplatz 1, 10178",
+        "abholzeit": "07:00 Uhr",
+        "zustellort": "Hamburg, Elbchaussee 45, 22765",
+        "zustellzeit": "bis 12:00 Uhr"
+      }
+    },
+    {
+      "absender": "logistik@transportservice.de",
+      "empfaenger": "dispatcher@meinunternehmen.de",
+      "betriff": "Fahraufträge für den 26.11.2025 – mehrere Touren",
+      "body": {
+        "abholort": "München, Marienplatz 8, 80331",
+        "abholzeit": "09:30 Uhr",
+        "zustellort": "Stuttgart, Königstraße 28, 70173",
+        "zustellzeit": "bis 13:00 Uhr"
+      }
+    },
+    {
+      "absender": "logistik@transportservice.de",
+      "empfaenger": "dispatcher@meinunternehmen.de",
+      "betriff": "Fahraufträge für den 26.11.2025 – mehrere Touren",
+      "body": {
+        "abholort": "Köln, Domkloster 4, 50667",
+        "abholzeit": "10:15 Uhr",
+        "zustellort": "Frankfurt am Main, Goethestraße 12, 60313",
+        "zustellzeit": "bis 14:30 Uhr"
+      }
+    },
+    {
+      "absender": "logistik@transportservice.de",
+      "empfaenger": "dispatcher@meinunternehmen.de",
+      "betriff": "Fahraufträge für den 26.11.2025 – mehrere Touren",
+      "body": {
+        "abholort": "Dresden, Prager Straße 5, 01069",
+        "abholzeit": "08:45 Uhr",
+        "zustellort": "Leipzig, Augustusplatz 10, 04109",
+        "zustellzeit": "bis 11:15 Uhr"
+      }
+    }
+  ]
+}

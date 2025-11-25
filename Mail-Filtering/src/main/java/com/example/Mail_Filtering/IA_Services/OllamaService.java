@@ -2,13 +2,16 @@ package com.example.Mail_Filtering.IA_Services;
 
 import com.example.Mail_Filtering.IA_Services.Http_AI.AiRequest;
 import com.example.Mail_Filtering.IA_Services.Http_AI.AiResponse;
+import com.example.Mail_Filtering.Models.EmailContainerModel;
 import com.example.Mail_Filtering.Models.EmailInputModel;
-
-
+import com.example.Mail_Filtering.Models.EmailOutputModel;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -17,12 +20,9 @@ import java.nio.file.Path;
 public class OllamaService {
     @Autowired
     private final RestTemplate restTemplate;
-
-
-
-
-
+    private final ObjectMapper objectMapper = new ObjectMapper();
     private static final String OLLAMA_URL = "http://localhost:11434/api/generate";
+
 
     public OllamaService(RestTemplate restTemplate){
         this.restTemplate = restTemplate;
@@ -41,10 +41,10 @@ public class OllamaService {
                 "empfaenger: "+emailInputModel.getEmpfaenger()+
                 "betriff: "+ emailInputModel.getBetriff()+
                 "body: {" +
-                "Abholort: " +
-                "Abholzeit: " +
-                "Zustellort: "+
-                "Zustellzeit:"+
+                "abholort: " +
+                "abholzeit: " +
+                "zustellort: "+
+                "zustellzeit:"+
                 "}"+
                 "Gib das Ergebnis NUR als folgendes JSON zurück:\n" +
                 "\n" +
@@ -66,7 +66,8 @@ public class OllamaService {
         assert aiResponse != null;//hier muss noch der Exception empfangen
         System.out.println(aiResponse.getResponse());
 
-        String filePath = "C:/Users/ahmad/Desktop/Spring_boot_projects/Mail-Filtering (1)/Data/Date.json";
+        String filePath = "C:/Users/ahmad/Desktop/Spring_boot_projects/Mail-Filtering (1)" +
+                "/Mail-Filtering/src/main/resources/Date.json";
         try {
             Files.writeString(Path.of(filePath), aiResponse.getResponse());
             System.out.println("JSON erfolgreich gespeichert!");
@@ -76,17 +77,25 @@ public class OllamaService {
     }
 
 
-    public String readJsonFromFile()  {
-        String filePath = "C:/Users/ahmad/Desktop/Spring_boot_projects/Mail-Filtering (1)" +
-                "/Data/Date" +
-                ".json";
-        String content ="";
+    public EmailContainerModel readJsonFromFile()  {
+        EmailContainerModel containerModel = null;
         try {
-             content = Files.readString(Path.of(filePath));
-        } catch (Exception e) {
-            System.out.println("Fehler beim Json Datei lesen");
+            InputStream inputStream = new ClassPathResource("Date.json").getInputStream();
+            containerModel = objectMapper.readValue(inputStream,
+                    EmailContainerModel.class);
+            /*for (EmailOutputModel emailOutputModel : containerModel.getOrders()){
+                System.out.println(emailOutputModel.getAbsender());
+                System.out.println(emailOutputModel.getEmpfaenger());
+                System.out.println(emailOutputModel.getBetriff());
+                System.out.println(emailOutputModel.getEmailBodyModel().getAbholort());
+                System.out.println(emailOutputModel.getEmailBodyModel().getAbholzeit());
+                System.out.println(emailOutputModel.getEmailBodyModel().getZustellort());
+                System.out.println(emailOutputModel.getEmailBodyModel().getZustellzeit());
+            }*/
+        }catch (IOException e){
+            System.out.println(e);
         }
-        return content;
+       return containerModel;
     }
 
 }

@@ -1,6 +1,7 @@
 package com.example.Mail_Filtering.RestController;
 
 import com.example.Mail_Filtering.IA_Services.OllamaService;
+import com.example.Mail_Filtering.Models.EmailContainerModel;
 import com.example.Mail_Filtering.Models.EmailInputModel;
 import com.example.Mail_Filtering.Models.EmailOutputModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class AiController {
     }
 
     @GetMapping("/read")
-    public String read(){
+    public EmailContainerModel read(){
         return ollamaService.readJsonFromFile();
     }
 
