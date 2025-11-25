@@ -6,7 +6,7 @@ public class AiResponse {
     private boolean done = true;
 
     public AiResponse(String model, String prompt, boolean done) {
-        this.model = model;
+        this.model = "llama3";
         this.response = prompt;
         this.done = done;
     }

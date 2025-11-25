@@ -9,14 +9,14 @@ import java.util.List;
 public class EmailContainerModel {
 
     @Autowired
-    EmailModel emailModel;
-    public List<EmailModel> emailModelList;
+    EmailOutputModel emailModel;
+    public List<EmailOutputModel> emailModelList;
 
-    public List<EmailModel> getEmailModelList() {
+    public List<EmailOutputModel> getEmailModelList() {
         return emailModelList;
     }
 
-    public void setEmailModelList(List<EmailModel> emailModelList) {
+    public void setEmailModelList(List<EmailOutputModel> emailModelList) {
         this.emailModelList = emailModelList;
     }
 }

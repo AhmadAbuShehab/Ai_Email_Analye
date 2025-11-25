@@ -1,44 +1,23 @@
 package com.example.Mail_Filtering.Models;
 
-
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDateTime;
-
 @Component
-public class EmailModel {
-
+public class EmailInputModel {
     private String absender;
     private String empfaenger;
     private  String betriff;
     private String body;
-    private String abholeOrt;
-    private String zuStellOrt;
-    private LocalDateTime abholZeit;
-    private LocalDateTime zuStellZeit;
 
-
-    public EmailModel() {
-        // Empty constructor REQUIRED by Spring
+    public EmailInputModel() {
+        this.absender = absender;
     }
 
-    public EmailModel(String ebsender, String empfaenger, String betriff, String body) {
-        this.absender = ebsender;
+    public EmailInputModel(String absender, String empfaenger, String betriff, String body) {
+        this.absender = absender;
         this.empfaenger = empfaenger;
         this.betriff = betriff;
         this.body = body;
-    }
-
-    public EmailModel(String ebsender, String empfaenger, String betriff, String body,
-                      String zuStellOrt, String abholeOrt, LocalDateTime abholZeit, LocalDateTime zuStellZeit) {
-        this.absender = ebsender;
-        this.empfaenger = empfaenger;
-        this.betriff = betriff;
-        this.body = body;
-        this.zuStellOrt = zuStellOrt;
-        this.abholeOrt = abholeOrt;
-        this.abholZeit = abholZeit;
-        this.zuStellZeit = zuStellZeit;
     }
 
     public String getAbsender() {

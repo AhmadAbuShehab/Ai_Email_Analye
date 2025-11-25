@@ -1,7 +1,8 @@
 package com.example.Mail_Filtering.RestController;
 
 import com.example.Mail_Filtering.IA_Services.OllamaService;
-import com.example.Mail_Filtering.Models.EmailModel;
+import com.example.Mail_Filtering.Models.EmailInputModel;
+import com.example.Mail_Filtering.Models.EmailOutputModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,14 +15,11 @@ public class AiController {
     @Autowired
     private OllamaService ollamaService;
 
-    //@Autowired
-    //private EmailModel emailModel;
-
-
     @PostMapping("multi")
     public void multi(@RequestBody HashMap<String, String> request){
-        EmailModel emailModel = new EmailModel(request.get("absender"), request.get(("empfaenger")), request.get("betreff"), request.get("body"));
-        ollamaService.mailSplitAiResponse(emailModel);
+        EmailInputModel emailInputModelModel = new EmailInputModel(request.get("absender"), request.get(
+                "empfaenger"),request.get("betriff"), request.get("body"));
+        ollamaService.mailSplitAiResponse(emailInputModelModel);
     }
 
     @GetMapping("/read")
