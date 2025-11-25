@@ -1,22 +1,23 @@
 package com.example.Mail_Filtering.Models;
+import com.example.Mail_Filtering.Models.EmailOutputModel;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+
+
 public class EmailContainerModel {
 
-    @Autowired
-    EmailOutputModel emailModel;
-    public List<EmailOutputModel> emailModelList;
+    EmailOutputModel emailOutputModel;
 
-    public List<EmailOutputModel> getEmailModelList() {
-        return emailModelList;
+    private List<EmailOutputModel> orders;
+
+    public List<EmailOutputModel> getOrders() {
+        return orders;
     }
 
-    public void setEmailModelList(List<EmailOutputModel> emailModelList) {
-        this.emailModelList = emailModelList;
+    public void setOrders(List<EmailOutputModel> orders) {
+        this.orders = orders;
     }
+
 }
