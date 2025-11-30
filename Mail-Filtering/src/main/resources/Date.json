@@ -1,9 +1,9 @@
 {
   "orders": [
     {
-      "absender": "",
-      "empfaenger": "",
-      "betriff": "Elektronikpalette n München Hamburg TA-001",
+      "absender": "logistik@transportservice.de",
+      "empfaenger": "dispatcher@meinunternehmen.de",
+      "betriff": "",
       "body": {
         "order": "1.200",
         "ware": "Elektronikpalette",
@@ -14,9 +14,9 @@
       }
     },
     {
-      "absender": "",
-      "empfaenger": "",
-      "betriff": "Maschinenbautei le Paris Berlin TA-002",
+      "absender": "logistik@transportservice.de",
+      "empfaenger": "dispatcher@meinunternehmen.de",
+      "betriff": "",
       "body": {
         "order": "4.500",
         "ware": "Maschinenbautei",
@@ -27,12 +27,12 @@
       }
     },
     {
-      "absender": "",
-      "empfaenger": "",
-      "betriff": "Chemikalien (Gefahrgut) Zürich Frankfurt TA-003",
+      "absender": "logistik@transportservice.de",
+      "empfaenger": "dispatcher@meinunternehmen.de",
+      "betriff": "",
       "body": {
         "order": "800",
-        "ware": "Chemikalien",
+        "ware": "Chemikalien (Gefahrgut)",
         "abholort": "Zürich",
         "abholzeit": "03.12.2025",
         "zustellort": "Frankfurt",
@@ -40,12 +40,12 @@
       }
     },
     {
-      "absender": "",
-      "empfaenger": "",
-      "betriff": "Möbel (Sperrgut) Wien Köln TA-004",
+      "absender": "logistik@transportservice.de",
+      "empfaenger": "dispatcher@meinunternehmen.de",
+      "betriff": "",
       "body": {
         "order": "2.100",
-        "ware": "Möbel",
+        "ware": "Möbel (Sperrgut)",
         "abholort": "Wien",
         "abholzeit": "04.12.2025",
         "zustellort": "Köln",
@@ -53,12 +53,12 @@
       }
     },
     {
-      "absender": "",
-      "empfaenger": "",
-      "betriff": "Textilien (30 Kartons) Rom Stuttgart TA-005",
+      "absender": "logistik@transportservice.de",
+      "empfaenger": "dispatcher@meinunternehmen.de",
+      "betriff": "",
       "body": {
         "order": "450",
-        "ware": "Textilien",
+        "ware": "Textilien (30 Kartons)",
         "abholort": "Rom",
         "abholzeit": "05.12.2025",
         "zustellort": "Stuttgart",

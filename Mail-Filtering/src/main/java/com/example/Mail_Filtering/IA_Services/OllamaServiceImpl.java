@@ -50,9 +50,9 @@ public class OllamaServiceImpl implements OllamaService {
                 "absender,empfenger und betriff über nimmst du die Werte aus dem " +
                 "orginallen text:" +
                 "{"+
-                "absender:"+ emailInputModel.getAbsender()+
-                "empfaenger: "+emailInputModel.getEmpfaenger()+
-                "betriff: "+ emailInputModel.getBetriff()+
+                "absender": "%s",
+                "empfaenger": "%s",
+                "betriff": "%s",
                 "body: {" +
                 "order: " +
                 "ware: " +
@@ -76,53 +76,47 @@ public class OllamaServiceImpl implements OllamaService {
                 "\n" +
                 "{{"+emailInputModel.getBody() +"}}";*/
                  """
-AUFGABE:
-Du erhältst eine E-Mail. Analysiere ausschließlich das Feld "body".
-Im Body stehen Transportaufträge in natürlicher Sprache.
+                 AUFGABE:\\n" +
+                 "Du erhältst ein JSON-Objekt „email“. Analysiere ausschließlich das Feld \\"body\\".\\n" +
+                 "Im Body stehen Transportaufträge in natürlicher Sprache.\\n" +
+                 "\\n" +
+                 "Für jeden Auftrag erstelle ein JSON-Objekt nach folgendem Schema, und für den " +
+                 "absender,empfenger und betriff über nimmst du die Werte aus email-absender, Email-empfaenger und Email-betriff dem " +
+                 "orginallen text:" +
+                 "{"+
+                 "absender": "%s",
+                 "empfaenger": "%s",
+                 "betriff": "%s",
+                 "body: {" +
+                 "order: " +
+                 "ware: " +
+                 "abholort: " +
+                 "abholzeit: " +
+                 "zustellort: "+
+                 "zustellzeit:"+
+                 "}"+
 
-Für jeden Auftrag erstelle ein JSON-Objekt nach folgendem Schema, und für den
-absender, empfaenger und betriff übernimmst du die Werte aus dem originalen Text:
-
-{
-  "orders": [
-    {
-      "absender": "%s",
-      "empfaenger": "%s",
-      "betriff": "%s",
-      "body": {
-        "order": "",
-        "ware": "",
-        "abholort": "",
-        "abholzeit": "",
-        "zustellort": "",
-        "zustellzeit": ""
-      }
-    }
-  ]
-}
-
-Gib das Ergebnis NUR als folgendes JSON zurück:
-
-{
-  "orders": [ ... ]
-}
-
-Falls Informationen im Text fehlen, lasse die Felder leer, aber behalte die Struktur bei.
-
-KEIN zusätzlicher Text.
-KEINE Kommentare.
-KEINE Erklärungen.
-DAS ERGEBNIS MUSS IN EINER GÜLTIGE LESBARE JSON FORM SEIN.
-
-Hier ist die Email:
-
-%s
-""".formatted(
+                Gib das Ergebnis NUR als folgendes JSON zurück:
+                
+                {
+                  "orders": [ ... ]
+                }
+                
+                Falls Informationen im Text fehlen, lasse die Felder leer, aber behalte die Struktur bei.
+                
+                KEIN zusätzlicher Text.
+                KEINE Kommentare.
+                KEINE Erklärungen.
+                DAS ERGEBNIS MUSS IN EINER GÜLTIGE LESBARE JSON FORM SEIN.
+                
+                Hier ist die Email:
+                
+                %s
+                """.formatted(
                 emailInputModel.getAbsender(),
                 emailInputModel.getEmpfaenger(),
                 emailInputModel.getBetriff(),
-                emailInputModel.getBody()
-        );
+                emailInputModel.getBody());
         String model = "llama3";
         AiRequest aiRequest = new AiRequest(model, prompt, false);
         AiResponse aiResponse = restTemplate.postForObject(OLLAMA_URL, aiRequest,AiResponse.class);
