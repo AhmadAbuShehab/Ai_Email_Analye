@@ -10,6 +10,8 @@ import java.util.ArrayList;
 @Component
 public class EmailOutputModel {
 
+    //private String order;
+    //private String ware;
     private String absender;
     private String empfaenger;
     private String betriff;
@@ -29,6 +31,7 @@ public class EmailOutputModel {
         this.betriff = betriff;
         this.emailBodyModel = emailBodyModel;
     }
+
 
 
     public String getAbsender() {

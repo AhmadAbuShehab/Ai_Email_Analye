@@ -4,10 +4,29 @@ import java.time.LocalDateTime;
 
 
 public class EmailBodyModel {
+
+    private String order;
+    private String ware;
     private String abholort;
     private String abholzeit;
     private String zustellort;
     private String zustellzeit;
+
+    public String getOrder() {
+        return order;
+    }
+
+    public void setOrder(String order) {
+        this.order = order;
+    }
+
+    public String getWare() {
+        return ware;
+    }
+
+    public void setWare(String ware) {
+        this.ware = ware;
+    }
 
     public String getAbholort() {
         return abholort;

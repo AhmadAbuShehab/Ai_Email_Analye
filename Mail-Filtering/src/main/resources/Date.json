@@ -1,48 +1,69 @@
 {
-"orders": [
-  {
-    "absender": "logistik@transportservice.de",
-    "empfaenger": "dispatcher@meinunternehmen.de",
-    "betriff": "Fahraufträge für den 26.11.2025 – mehrere Touren",
-    "body": {
-      "abholort": "Berlin, Alexanderplatz 1, 10178",
-      "abholzeit": "07:00 Uhr",
-      "zustellort": "Hamburg, Elbchaussee 45, 22765",
-      "zustellzeit": "bis 12:00 Uhr"
+  "orders": [
+    {
+      "absender": "",
+      "empfaenger": "",
+      "betriff": "Elektronikpalette n München Hamburg TA-001",
+      "body": {
+        "order": "1.200",
+        "ware": "Elektronikpalette",
+        "abholort": "München",
+        "abholzeit": "01.12.2025",
+        "zustellort": "Hamburg",
+        "zustellzeit": ""
+      }
+    },
+    {
+      "absender": "",
+      "empfaenger": "",
+      "betriff": "Maschinenbautei le Paris Berlin TA-002",
+      "body": {
+        "order": "4.500",
+        "ware": "Maschinenbautei",
+        "abholort": "Paris",
+        "abholzeit": "02.12.2025",
+        "zustellort": "Berlin",
+        "zustellzeit": ""
+      }
+    },
+    {
+      "absender": "",
+      "empfaenger": "",
+      "betriff": "Chemikalien (Gefahrgut) Zürich Frankfurt TA-003",
+      "body": {
+        "order": "800",
+        "ware": "Chemikalien",
+        "abholort": "Zürich",
+        "abholzeit": "03.12.2025",
+        "zustellort": "Frankfurt",
+        "zustellzeit": ""
+      }
+    },
+    {
+      "absender": "",
+      "empfaenger": "",
+      "betriff": "Möbel (Sperrgut) Wien Köln TA-004",
+      "body": {
+        "order": "2.100",
+        "ware": "Möbel",
+        "abholort": "Wien",
+        "abholzeit": "04.12.2025",
+        "zustellort": "Köln",
+        "zustellzeit": ""
+      }
+    },
+    {
+      "absender": "",
+      "empfaenger": "",
+      "betriff": "Textilien (30 Kartons) Rom Stuttgart TA-005",
+      "body": {
+        "order": "450",
+        "ware": "Textilien",
+        "abholort": "Rom",
+        "abholzeit": "05.12.2025",
+        "zustellort": "Stuttgart",
+        "zustellzeit": ""
+      }
     }
-  },
-  {
-    "absender": "logistik@transportservice.de",
-    "empfaenger": "dispatcher@meinunternehmen.de",
-    "betriff": "Fahraufträge für den 26.11.2025 – mehrere Touren",
-    "body": {
-      "abholort": "München, Marienplatz 8, 80331",
-      "abholzeit": "09:30 Uhr",
-      "zustellort": "Stuttgart, Königstraße 28, 70173",
-      "zustellzeit": "bis 13:00 Uhr"
-    }
-  },
-  {
-    "absender": "logistik@transportservice.de",
-    "empfaenger": "dispatcher@meinunternehmen.de",
-    "betriff": "Fahraufträge für den 26.11.2025 – mehrere Touren",
-    "body": {
-      "abholort": "Köln, Domkloster 4, 50667",
-      "abholzeit": "10:15 Uhr",
-      "zustellort": "Frankfurt am Main, Goethestraße 12, 60313",
-      "zustellzeit": "bis 14:30 Uhr"
-    }
-  },
-  {
-    "absender": "logistik@transportservice.de",
-    "empfaenger": "dispatcher@meinunternehmen.de",
-    "betriff": "Fahraufträge für den 26.11.2025 – mehrere Touren",
-    "body": {
-      "abholort": "Dresden, Prager Straße 5, 01069",
-      "abholzeit": "08:45 Uhr",
-      "zustellort": "Leipzig, Augustusplatz 10, 04109",
-      "zustellzeit": "bis 11:15 Uhr"
-    }
-  }
-]
+  ]
 }

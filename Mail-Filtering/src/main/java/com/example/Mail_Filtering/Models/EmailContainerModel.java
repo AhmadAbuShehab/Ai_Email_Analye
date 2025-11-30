@@ -1,14 +1,20 @@
 package com.example.Mail_Filtering.Models;
-import com.example.Mail_Filtering.Models.EmailOutputModel;
 
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-
-
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Component
 public class EmailContainerModel {
 
-    EmailOutputModel emailOutputModel;
+    //private String status;
 
     private List<EmailOutputModel> orders;
 
@@ -16,8 +22,16 @@ public class EmailContainerModel {
         return orders;
     }
 
+
     public void setOrders(List<EmailOutputModel> orders) {
         this.orders = orders;
     }
 
+   /* public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }*/
 }
